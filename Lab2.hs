@@ -136,7 +136,7 @@ instance Eval Ω where
           unrollOmega (Out (n, ω)) = print n >> unrollOmega ω
           unrollOmega (In f)       = getLine >>= unrollOmega . f . read
 
-{- Factorial program, inputs a number >= 0 and calculates the factorial of that number -}
+{- Dado un número por consola >= 0 calcula el factorial de ese número -}
 progFact =
   Seq
     (Input "x")
@@ -160,7 +160,7 @@ progFact =
 
 factorial = eval progFact eIniTest
 
-{- Inputs a number >= 0 and calculates the sum of numbers from 1 to input number -}
+{- Dado un número por consola >= 0 calcula la suma de los numeros enteros de 1 al número ingresado -}
 progSum =
     Seq
         (Input "n")
